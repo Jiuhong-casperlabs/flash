@@ -13,7 +13,7 @@ use crate::constants::{
 };
 use casper_erc20::Address;
 
-/// Returns the `name` entry point.
+/// Returns the `on_flash_loan` entry point.
 pub fn on_flash_loan() -> EntryPoint {
     EntryPoint::new(
         String::from(ON_FLASH_LOAN_ENTRY_POINT_NAME),
@@ -30,7 +30,7 @@ pub fn on_flash_loan() -> EntryPoint {
     )
 }
 
-/// Returns the `symbol` entry point.
+/// Returns the `flash_borrow` entry point.
 pub fn flash_borrow() -> EntryPoint {
     EntryPoint::new(
         String::from(FLASH_BORROW_ENTRY_POINT_NAME),

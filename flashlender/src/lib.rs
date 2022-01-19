@@ -112,19 +112,17 @@ impl EIP3156LENDER {
         initial_supportted_tokens: Vec<(Address, U256)>,
         entry_points: EntryPoints,
     ) -> Result<EIP3156LENDER, Error> {
-
         let loan_fee_uref = storage::new_dictionary(LOAN_FEE_KEY_NAME).unwrap_or_revert();
         let loan_fee_key = Key::from(loan_fee_uref);
 
         let mut supported_tokens: Vec<Address> = vec![];
         for (_, n) in initial_supportted_tokens.into_iter().enumerate() {
-            supported_tokens.push(n.0);  //fill vec of tokens address 
+            supported_tokens.push(n.0); //fill vec of tokens address
             tokens::write_loan_fee_to(loan_fee_uref, n.0, n.1) //fill dictionary with loan fee and token pair
         }
 
         let supported_tokens_uref = storage::new_uref(supported_tokens).into_read_write();
         let supported_tokens_key = Key::from(supported_tokens_uref);
-
 
         let mut named_keys = NamedKeys::new();
 

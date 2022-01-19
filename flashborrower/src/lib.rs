@@ -8,9 +8,7 @@ use crate::constants::LENDER_KEY_NAME;
 
 use casper_contract::contract_api::storage;
 use casper_erc20::Address;
-use casper_types::{
-    bytesrepr::Bytes, contracts::NamedKeys, EntryPoints, Key, URef, U256,
-};
+use casper_types::{bytesrepr::Bytes, contracts::NamedKeys, EntryPoints, Key, URef, U256};
 use once_cell::unsync::OnceCell;
 
 pub use error::Error;
